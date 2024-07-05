@@ -1,0 +1,30 @@
+#root {
+    font-size: 16px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    list-style: none;
+    position: sticky;
+    background-color: aquamarine;
+    padding: 2em;
+}
+
+ul.MainNavbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    list-style: none;
+    position: sticky;
+    background-color: aquamarine;
+    padding: 2em;
+    margin: 0;
+    border-top: 2px solid black;
+}

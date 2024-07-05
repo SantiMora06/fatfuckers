@@ -1,6 +1,9 @@
+import HomePage from "./Pages/HomePage";
+
 function App() {
   return <>
-  Ready to code with Mantine, a router would be nice in there 😺</>
+  <HomePage/>
+  </>
 }
 
 export default App
