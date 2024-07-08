@@ -1,7 +1,10 @@
+import BodyExercises from "../Components/BodyEx";
+
+
 const BodyWeightPage = () => {
     return ( 
         <>
-        <h1>Body Weight</h1>
+        <BodyExercises/>
         </>
      );
 }

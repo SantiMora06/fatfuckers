@@ -37,6 +37,12 @@ const ToggleNavbar = () => {
         <Menu.Item className="Item">
           Calves
         </Menu.Item>
+        <Menu.Item className="Item">
+          Core
+        </Menu.Item>
+        <Menu.Divider />
+
+<Menu.Item>All exercises</Menu.Item>
       </Menu.Dropdown>
     </Menu>
     </section>

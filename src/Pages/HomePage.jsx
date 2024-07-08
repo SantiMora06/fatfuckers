@@ -5,6 +5,7 @@ import ToggleNavbar from "../Components/ToggleNavbar";
 import AboutUs from "./AboutUs";
 import WorkoutsPage from "./Workouts";
 import GymPage from "./GymPage";
+import BodyWeightPage from "./BodyWeight";
 
 const HomePage = () => {
 
@@ -17,6 +18,7 @@ const HomePage = () => {
         <img/>
 
         <Routes>
+        <Route path="/workouts/bodyweight" element={<BodyWeightPage/>}/>
         <Route path="/workouts/gym" element={<GymPage/>}/>
         <Route path="/workouts" element={<WorkoutsPage/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>

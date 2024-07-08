@@ -1,3 +1,8 @@
+import { useEffect, useState } from "react"
+import API_URL from "../helpers/API_URL"
+import { Link } from "react-router-dom"
+
+
 const BodyExercises = () => {
  
     const [bodyEx, setBodyEx] = useState([])
@@ -7,10 +12,10 @@ const BodyExercises = () => {
     const fetchAllBodyEx = async() => {
  
      try {
-           const response = await fetch(`${API_URL}/`)
+           const response = await fetch(`${API_URL}/workouts`)
            if(response.ok){
              const bodyData = await response.json()
-             setGymEx(bodyData)
+             setBodyEx(bodyData)
            }
      } catch (error) {
          console.log(error)
@@ -28,14 +33,11 @@ const BodyExercises = () => {
  <>
  
  <h1>HWY RHWE</h1>
- 
- <Navbar/>
-     <MainNavbar/>
-     <ToggleNavbar/>
+
      
     <section>
        <ul>
-         {gymEx
+         {bodyEx
            .filter((currentExercise) => !currentExercise.isGym)
            .map((currentExercise) => (
              <Link to={`/workouts/bodyweight/${currentExercise.id}`} key={currentExercise.id}>

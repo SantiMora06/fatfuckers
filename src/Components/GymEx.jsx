@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react"
+import API_URL from "../helpers/API_URL"
+import { Link } from "react-router-dom"
+
 
 const GymEx = () => {
     
@@ -7,7 +10,8 @@ const GymEx = () => {
    const fetchAllGymEx = async() => {
 
     try {
-          const response = await fetch(`${API_URL}`)
+          const response = await fetch(`${API_URL}/workouts`)
+          console.log(response)
           if(response.ok){
             const gymData = await response.json()
             setGymEx(gymData)
@@ -18,6 +22,7 @@ const GymEx = () => {
    }
 
    useEffect(()=>{
+    console.log('hey')
     fetchAllGymEx()
    }, [])
 
