@@ -11,19 +11,19 @@ const ToggleNavbar = () => {
 
       <Menu.Dropdown>
         <Menu.Label>Upper Body</Menu.Label>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Biceps
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Triceps
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Chest
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Back
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Shoulders
         </Menu.Item>
        
@@ -31,13 +31,10 @@ const ToggleNavbar = () => {
         <Menu.Divider />
 
         <Menu.Label>Lower Body</Menu.Label>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Quads
         </Menu.Item>
-        <Menu.Item>
-          Femoral
-        </Menu.Item>
-        <Menu.Item>
+        <Menu.Item className="Item">
           Calves
         </Menu.Item>
       </Menu.Dropdown>

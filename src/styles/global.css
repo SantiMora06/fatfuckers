@@ -33,13 +33,28 @@ ul.MainNavbar {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
-button.m_77c9d27d,
-#mantine-vq9isn4ca-dropdown {
+#mantine-lh6zqesbw-target {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+section ul {
+    display: grid;
+    grid: 1fr / 1fr 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+li.card {
+    border: 1px solid black;
+    gap: 20px;
+    list-style: none;
 }
