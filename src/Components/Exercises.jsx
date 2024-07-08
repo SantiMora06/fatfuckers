@@ -13,7 +13,6 @@ const fetchAllExercises = async() =>{
         const response = await fetch(`${API_URL}`)
         if(response.ok){
         const exercisesData = await response.json();
-        console.log(exercisesData)
         setExercise(exercisesData)
     }
     } catch (error) {
@@ -30,7 +29,7 @@ useEffect(() =>{
         <section>
             <ul>
                 {exercise.map((currentExercise) => (
-                    <Link to={`/GymPage/${currentExercise.id}}`} key={currentExercise.id}>
+                    <Link to={`/workouts/${currentExercise.id}}`} key={currentExercise.id}>
                       <li
                         className='card'>
                         <img

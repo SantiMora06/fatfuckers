@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+import WorkoutsPage from "../Pages/Workouts";
+
 const MainNavbar = () => {
     return ( 
         <ul className="MainNavbar">
-            <li>GYM</li>
-            <li>WORKOUT</li>
+            <Link to="/workouts"><li>WORKOUTS</li></Link>
             </ul>
      );
 }

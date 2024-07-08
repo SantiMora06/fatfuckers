@@ -1,8 +1,10 @@
-import { Routes } from "react-router-dom";
-import Exercises from "../Components/Exercises";
+import { Route, Routes } from "react-router-dom";
 import MainNavbar from "../Components/MainNavbar";
 import Navbar from "../Components/Navbar";
 import ToggleNavbar from "../Components/ToggleNavbar";
+import AboutUs from "./AboutUs";
+import WorkoutsPage from "./Workouts";
+import GymPage from "./GymPage";
 
 const HomePage = () => {
 
@@ -12,7 +14,14 @@ const HomePage = () => {
         <Navbar/>
         <MainNavbar/>
         <ToggleNavbar/>
-        <Exercises/>
+        <img/>
+
+        <Routes>
+        <Route path="/workouts/gym" element={<GymPage/>}/>
+        <Route path="/workouts" element={<WorkoutsPage/>}/>
+        <Route path="/about-us" element={<AboutUs/>}/>
+  
+        </Routes>
 
         </>
      );

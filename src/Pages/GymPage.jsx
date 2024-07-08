@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import API_URL from "../helpers/API_URL";
+import GymEx from "../Components/GymEx";
+
 
 const GymPage = () => {
 
@@ -31,26 +33,9 @@ const GymPage = () => {
    
 <>
 
-<Navbar/>
-    <MainNavbar/>
-    <ToggleNavbar/>
-    
-    <section>
-      <ul>
-        {gymEx
-          .filter((currentExercise) => currentExercise === isGym)
-          .map((currentExercise) => (
-            <Link to={`/${currentExercise.id}`} key={currentExercise.id}>
-              <li className='card'>
-                <img src={currentExercise.picture} alt={currentExercise.exercise} />
-                <h3>{currentExercise.exercise}</h3>
-                <p className='content'>{currentExercise.category}</p>
-                <p className='content'>{currentExercise.description}</p>
-              </li>
-            </Link>
-          ))}
-      </ul>
-    </section>
+<h1>HWY RHWE</h1>
+
+  <GymEx/>
     </>
      );
 }
