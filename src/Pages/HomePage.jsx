@@ -9,26 +9,29 @@ import BodyWeightPage from "./BodyWeight";
 
 const HomePage = () => {
 
-    return ( 
+    return (
         <>
-    
-        <Navbar/>
-        <MainNavbar/>
-        <ToggleNavbar/>
-        <img/>
 
-        <Routes>
-        <Route path="/workouts/bodyweight" element={<BodyWeightPage/>}/>
-        <Route path="/workouts/gym" element={<GymPage/>}/>
-        <Route path="/workouts" element={<WorkoutsPage/>}/>
-        <Route path="/about-us" element={<AboutUs/>}/>
-  
-        </Routes>
+            <Navbar />
+            <MainNavbar />
+            <ToggleNavbar />
+            <ul>
+                <img src="src/assets/Strong_Dobby.png" alt="Gym-Dobby" />
+                <img src="src/assets/Bellatrix.png" alt="Strong-Bellatrix" />
+            </ul>
+
+            <Routes>
+                <Route path="/workouts/bodyweight" element={<BodyWeightPage />} />
+                <Route path="/workouts/gym" element={<GymPage />} />
+                <Route path="/workouts" element={<WorkoutsPage />} />
+                <Route path="/about-us" element={<AboutUs />} />
+
+            </Routes>
 
         </>
-     );
+    );
 }
 
 
- 
+
 export default HomePage;

@@ -1,4 +1,4 @@
-import { Menu, Button, Text, rem } from '@mantine/core';
+import { Menu, Button } from '@mantine/core';
 
 
 const ToggleNavbar = () => {
