@@ -63,3 +63,73 @@ a {
     text-decoration: none;
     color: black;
 }
+
+img {
+    width: 49.5%;
+}
+
+
+div.entryCards button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: 150%;
+    cursor: pointer;
+}
+
+div.entryCards button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    font-weight: bold;
+}
+
+div.entryCards {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
+div.gymCard {
+    display: flex;
+    background-image: url(/src/assets/Strong_Dobby.png);
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+div.bodyCard {
+    display: flex;
+    background-image: url(/src/assets/Bellatrix.png);
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+div.articlesCard {
+    display: flex;
+    background-image: url(/src/assets/Snape.png);
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
