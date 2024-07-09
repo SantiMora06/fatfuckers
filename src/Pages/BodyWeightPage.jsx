@@ -1,4 +1,4 @@
-import BodyExercises from "../Components/BodyEx";
+import BodyExercises from "../Components/BodyExercises";
 
 
 const BodyWeightPage = () => {
