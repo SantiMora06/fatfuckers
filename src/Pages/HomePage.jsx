@@ -20,6 +20,7 @@ const HomePage = () => {
 
       <Routes>
         <Route path="/workouts/bodyweight" element={<BodyWeightPage />} />
+        <Route path="/workouts/bodyweight/:category" element={<BodyWeightPage />} />
         <Route path="/workouts/gym/:category" element={<GymPage />} />
         <Route path="/workouts/gym" element={<GymPage />} />{" "}
         {/* Add this route to match /workouts/gym */}
