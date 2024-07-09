@@ -6,6 +6,7 @@ import AboutUs from "./AboutUs";
 import Workouts from "./Workouts";
 import GymPage from "./GymPage";
 import BodyWeightPage from "./BodyWeightPage";
+import IntroCard from "./IntroCards";
 
 const HomePage = () => {
   return (
@@ -13,10 +14,7 @@ const HomePage = () => {
       <Navbar />
       <MainNavbar />
       <ToggleNavbar />
-      <ul>
-        <img src="src/assets/Strong_Dobby.png" alt="Gym-Dobby" />
-        <img src="src/assets/Bellatrix.png" alt="Strong-Bellatrix" />
-      </ul>
+      <IntroCard />
 
       <Routes>
         <Route path="/workouts/bodyweight" element={<BodyWeightPage />} />
