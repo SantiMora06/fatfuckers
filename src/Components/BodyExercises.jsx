@@ -1,57 +1,67 @@
-import { useEffect, useState } from "react"
-import API_URL from "../helpers/API_URL"
-import { Link } from "react-router-dom"
-
+import { useEffect, useState } from "react";
+import API_URL from "../helpers/API_URL";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const BodyExercises = () => {
- 
-    const [bodyEx, setBodyEx] = useState([])
+  const { category } = useParams();
+  const [bodyEx, setBodyEx] = useState([]);
 
-
-
-    const fetchAllBodyEx = async() => {
- 
-     try {
-           const response = await fetch(`${API_URL}/workouts`)
-           if(response.ok){
-             const bodyData = await response.json()
-             setBodyEx(bodyData)
-           }
-     } catch (error) {
-         console.log(error)
-     }
+  const fetchAllBodyEx = async () => {
+    try {
+      const response = await fetch(`${API_URL}/workouts`);
+      if (response.ok) {
+        const bodyData = await response.json();
+        console.log("Fetched data: ", bodyData); // Log fetched data
+        setBodyEx(bodyData);
+      } else {
+        console.log("Failed to fetch");
+      }
+    } catch (error) {
+      console.log(error);
     }
- 
- 
-    useEffect(()=>{
-     fetchAllBodyEx()
-    }, [])
- 
-    return (
-     
-    
- <>
- 
- <h1>HWY RHWE</h1>
+  };
 
-     
+  useEffect(() => {
+    fetchAllBodyEx();
+  }, []);
+
+  console.log("Current category: ", category); // Log current category
+  console.log("Gym exercises: ", bodyEx); // Log gym exercises
+
+  const normalizedCategory = category ? category.toLowerCase() : null; // Added normalization
+
+  const filteredExercises = normalizedCategory
+    ? bodyEx.filter(
+        (exercise) =>
+          !exercise.isGym &&
+          exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
+      )
+    : bodyEx.filter((exercise) => !exercise.isGym);
+
+  console.log("Filtered exercises: ", filteredExercises); // Log filtered exercises
+
+  return (
     <section>
-       <ul>
-         {bodyEx
-           .filter((currentExercise) => !currentExercise.isGym)
-           .map((currentExercise) => (
-             <Link to={`/workouts/bodyweight/${currentExercise.id}`} key={currentExercise.id}>
-               <li className='card'>
-                 <img src={currentExercise.picture} alt={currentExercise.exercise} />
-                 <h3>{currentExercise.exercise}</h3>
-                 <p className='content'>{currentExercise.category}</p>
-                 <p className='content'>{currentExercise.description}</p>
-               </li>
-             </Link>
-           ))}
-       </ul>
-     </section>
-     </>
-      );
- }
+      <ul>
+        {filteredExercises.map((currentExercise) => (
+          <Link
+            to={`/workouts/bodyweight/${category}/${currentExercise.id}`}
+            key={currentExercise.id}
+          >
+            <li className="card">
+              <img
+                src={currentExercise.picture}
+                alt={currentExercise.exercise}
+              />
+              <h3>{currentExercise.exercise}</h3>
+              <p className="content">{currentExercise.category}</p>
+              <p className="content">{currentExercise.description}</p>
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </section>
+  );
+};
 export default BodyExercises;
