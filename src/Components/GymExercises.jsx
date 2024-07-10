@@ -45,7 +45,7 @@ const GymExercises = () => {
       <ul>
         {filteredExercises.map((currentExercise) => (
           <Link
-            to={`/workouts/gym/${category}/${currentExercise.id}`}
+            to={`/workouts/gym/${currentExercise.category}/${currentExercise.id}`}
             key={currentExercise.id}
           >
             <li className="card">

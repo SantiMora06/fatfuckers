@@ -45,6 +45,9 @@ const ToggleNavbar = () => {
 <Menu.Item>
 <Link to="workouts/"> All Exercises </Link>
   </Menu.Item>
+  <Menu.Item>
+<Link to="workouts/addexercise"> Add Exercise </Link>
+  </Menu.Item>
       </Menu.Dropdown>
     </Menu>
     </section>
