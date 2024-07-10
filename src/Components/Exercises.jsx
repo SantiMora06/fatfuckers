@@ -77,7 +77,7 @@ const Exercises = () => {
             ) {
               return (
                 <Link
-                  to={`/workouts/${type}/${categoryLowerCase}/${currentExercise.id}`} // Updated the Link URL
+                  to={`/workouts/${type}/${currentExercise.categoryLowerCase}/${currentExercise.id}`} // Updated the Link URL
                   key={currentExercise.id}
                 >
                   <li className="card">
