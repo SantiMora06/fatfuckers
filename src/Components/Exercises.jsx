@@ -85,9 +85,11 @@ const Exercises = () => {
                       src={currentExercise.picture}
                       alt={currentExercise.exercise}
                     />
-                    <h3>{currentExercise.exercise}</h3>
-                    <p className="content">{currentExercise.category}</p>
-                    <p className="content">{currentExercise.description}</p>
+                    <div>
+                      <h3>{currentExercise.exercise}</h3>
+                      <p className="content">{currentExercise.category}</p>
+                      <p className="content">{currentExercise.description}</p>
+                    </div>
                   </li>
                 </Link>
               );
