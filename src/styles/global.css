@@ -46,17 +46,35 @@ ul.MainNavbar {
 
 section ul {
     display: grid;
-    grid: 1fr / 1fr 1fr 1fr;
+    grid: 1fr / 1fr 1fr 1fr 1fr;
     align-content: center;
     justify-content: center;
     align-items: center;
     justify-items: center;
+    padding-inline-start: 0;
 }
 
 li.card {
     border: 1px solid black;
-    gap: 20px;
     list-style: none;
+    display: flex;
+    margin-inline: 4%;
+    margin-block: 4%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+li.card div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
 }
 
 a {
@@ -132,4 +150,9 @@ div.articlesCard {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+}
+
+li.card img {
+    height: 400px;
+    width: 80%;
 }
