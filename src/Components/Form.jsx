@@ -37,6 +37,7 @@ function Form(props) {
         } catch (error) {
             console.log("error:", error)
         }
+        alert("Congrats! An exercise has been added");
     }
 
 
