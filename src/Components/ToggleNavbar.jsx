@@ -1,5 +1,5 @@
 import { Menu, Button } from '@mantine/core';
-
+import { Link } from 'react-router-dom';
 
 const ToggleNavbar = () => {
     return ( 
@@ -12,19 +12,19 @@ const ToggleNavbar = () => {
       <Menu.Dropdown>
         <Menu.Label>Upper Body</Menu.Label>
         <Menu.Item className="Item">
-          Biceps
+          <Link to="workouts/biceps"> Biceps </Link> 
         </Menu.Item>
         <Menu.Item className="Item">
-          Triceps
+        <Link to="workouts/triceps"> Triceps </Link>
         </Menu.Item>
         <Menu.Item className="Item">
-          Chest
+        <Link to="workouts/chest"> Chest </Link>
         </Menu.Item>
         <Menu.Item className="Item">
-          Back
+        <Link to="workouts/back"> Back </Link>
         </Menu.Item>
         <Menu.Item className="Item">
-          Shoulders
+        <Link to="workouts/shoulders"> Shoulders </Link>
         </Menu.Item>
        
 
@@ -32,17 +32,19 @@ const ToggleNavbar = () => {
 
         <Menu.Label>Lower Body</Menu.Label>
         <Menu.Item className="Item">
-          Quads
+        <Link to="workouts/quads"> Quads </Link>
         </Menu.Item>
         <Menu.Item className="Item">
-          Calves
+        <Link to="workouts/calves"> Calves </Link>
         </Menu.Item>
         <Menu.Item className="Item">
-          Core
+        <Link to="workouts/core"> Core </Link>
         </Menu.Item>
         <Menu.Divider />
 
-<Menu.Item>All exercises</Menu.Item>
+<Menu.Item>
+<Link to="workouts/"> All Exercises </Link>
+  </Menu.Item>
       </Menu.Dropdown>
     </Menu>
     </section>
