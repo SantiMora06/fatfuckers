@@ -7,7 +7,10 @@ import Workouts from "./Workouts";
 import GymPage from "./GymPage";
 import BodyWeightPage from "./BodyWeightPage";
 import IntroCard from "./IntroCards";
+
 import ExerciseDetails from "./ExerciseDetail";
+
+
 
 const HomePage = () => {
   return (
@@ -16,6 +19,10 @@ const HomePage = () => {
       <MainNavbar />
       <ToggleNavbar />
       <IntroCard />
+
+
+
+
       <Routes>
         <Route path="/workouts/bodyweight" element={<BodyWeightPage />} />
         <Route path="/workouts/bodyweight/:category" element={<BodyWeightPage />} />
