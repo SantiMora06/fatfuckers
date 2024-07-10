@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import WorkoutsPage from "../Pages/Workouts";
 
 const MainNavbar = () => {
-    return (
+    return ( 
         <ul className="MainNavbar">
             <Link to="/workouts"><li>WORKOUTS</li></Link>
-        </ul>
-    );
+            </ul>
+     );
 }
-
+ 
 export default MainNavbar;

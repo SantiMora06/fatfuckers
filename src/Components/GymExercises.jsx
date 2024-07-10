@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import API_URL from "../helpers/API_URL";
 import { Link } from "react-router-dom";
 
 const GymExercises = () => {
@@ -8,7 +9,7 @@ const GymExercises = () => {
 
   const fetchAllGymEx = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/workouts`);
+      const response = await fetch(`${API_URL}/workouts`);
       if (response.ok) {
         const gymData = await response.json();
         console.log("Fetched data: ", gymData); // Log fetched data
@@ -32,10 +33,10 @@ const GymExercises = () => {
 
   const filteredExercises = normalizedCategory
     ? gymEx.filter(
-      (exercise) =>
-        exercise.isGym &&
-        exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
-    )
+        (exercise) =>
+          exercise.isGym &&
+          exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
+      )
     : gymEx.filter((exercise) => exercise.isGym);
 
   console.log("Filtered exercises: ", filteredExercises); // Log filtered exercises

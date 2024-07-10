@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import API_URL from "../helpers/API_URL";
 
 const Exercises = () => {
   const { category } = useParams();
@@ -20,14 +21,14 @@ const Exercises = () => {
 
   const fetchAllExercises = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/workouts`);
+      const response = await fetch(`${API_URL}/workouts`);
       if (response.ok) {
         const exercisesData = await response.json();
         const filteredExercises = category
           ? exercisesData.filter(
-            (exercise) =>
-              exercise.category.toLowerCase() === category.toLowerCase()
-          )
+              (exercise) =>
+                exercise.category.toLowerCase() === category.toLowerCase()
+            )
           : exercisesData;
         setExercise(filteredExercises);
       }

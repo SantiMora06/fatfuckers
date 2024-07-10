@@ -7,8 +7,8 @@ import Workouts from "./Workouts";
 import GymPage from "./GymPage";
 import BodyWeightPage from "./BodyWeightPage";
 import IntroCard from "./IntroCards";
+
 import ExerciseDetails from "./ExerciseDetail";
-import AddExercise from "./AddExercise";
 
 
 
@@ -20,6 +20,9 @@ const HomePage = () => {
       <ToggleNavbar />
       <IntroCard />
 
+
+
+
       <Routes>
         <Route path="/workouts/bodyweight" element={<BodyWeightPage />} />
         <Route path="/workouts/bodyweight/:category" element={<BodyWeightPage />} />
@@ -30,7 +33,6 @@ const HomePage = () => {
         <Route path="/workouts/:category" element={<Workouts />} />
         <Route path="/workouts" element={<Workouts />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/workouts/addexercise" element={<AddExercise />} />
       </Routes>
     </>
   );
