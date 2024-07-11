@@ -11,8 +11,15 @@ nav {
     align-content: center;
     list-style: none;
     position: sticky;
-    background-color: aquamarine;
+    background-color: white;
     padding: 2em;
+    align-items: center;
+    color: white;
+}
+
+nav li {
+    color: black;
+    font-size: 3em;
 }
 
 ul.MainNavbar {
@@ -23,10 +30,15 @@ ul.MainNavbar {
     align-content: center;
     list-style: none;
     position: sticky;
-    background-color: aquamarine;
+    background: linear-gradient(to bottom, rgb(245, 81, 95), rgb(159, 4, 27));
     padding: 2em;
     margin: 0;
     border-top: 2px solid black;
+}
+
+ul.MainNavbar li {
+    color: black;
+    font-size: 2em;
 }
 
 .Toggle {
@@ -42,6 +54,10 @@ ul.MainNavbar {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.m_77c9d27d {
+    background: linear-gradient(to bottom, rgb(245, 81, 95), rgb(159, 4, 27));
 }
 
 section ul {
@@ -69,7 +85,7 @@ li.card {
 }
 
 li.card:hover {
-    background-color: rgb(207, 206, 206);
+    background: linear-gradient(to bottom, rgb(245, 81, 95), rgb(159, 4, 27));
 }
 
 li.card div {
