@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { MultiSelect } from '@mantine/core';
 
 function Form(props) {
     const [exercise, setExercise] = useState("");
@@ -7,12 +8,18 @@ function Form(props) {
     const [picture, setPicture] = useState("");
     const [description, setDescription] = useState("");
     const [isGym, setIsGym] = useState(false)
+    const [selectedCategories, setSelectedCategories] = useState([]);
 
-    const handleExerciseInput = (event) => setExercise(event.target.value);
     const handleCategoryInput = (event) => setCategory(event.target.value);
+    const handleExerciseInput = (event) => setExercise(event.target.value);
     const handlePictureInput = (event) => setPicture(event.target.value);
     const handleDescriptionInput = (event) => setDescription(event.target.value)
     const handleIsGym = (event) => setIsGym(event.target.checked)
+
+
+    const handleCategoryMultiSelect = (selectedValues) => {
+        setSelectedCategories(selectedValues);
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -32,15 +39,14 @@ function Form(props) {
                 setCategory("")
                 setDescription("")
                 setPicture("")
-                setIsGym("")
+                setIsGym(false)
+                setSelectedCategories([])
             }
         } catch (error) {
             console.log("error:", error)
         }
         alert("Congrats! An exercise has been added");
     }
-
-
 
     return (
         <div className="AddNewExercise">
@@ -55,13 +61,13 @@ function Form(props) {
                     onChange={handleExerciseInput}
                 />
 
+                <MultiSelect
+                    label="Categories"
+                    placeholder="Pick a category"
+                    data={['Biceps', 'Triceps', 'Back', 'Chest', 'Shoulders', 'Quads', 'Calves', 'Core']}
+                    onChange={handleCategoryMultiSelect}
+                    value={selectedCategories}
 
-                <label>Category: </label>
-                <input
-                    type="text"
-                    name="category"
-                    value={category}
-                    onChange={handleCategoryInput}
                 />
 
                 <label>Picture: </label>
