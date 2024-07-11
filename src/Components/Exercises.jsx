@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import DeleteHandler from './DeleteHandler'; // Highlighted line
 
 const Exercises = () => {
   const { category } = useParams();
@@ -40,6 +41,11 @@ const Exercises = () => {
     fetchAllExercises();
   }, [category]);
 
+  // Added handleDelete function
+  const handleDelete = (id) => {
+    setExercise((prevExercises) => prevExercises.filter(exercise => exercise.id !== id));
+  };
+
   return (
     <>
       <section>
@@ -76,23 +82,27 @@ const Exercises = () => {
               (isBodyweightChecked && !currentExercise.isGym)
             ) {
               return (
-                <Link
-                  to={`/workouts/${type}/${categoryLowerCase}/${currentExercise.id}`} // Updated the Link URL
-                  key={currentExercise.id}
-                >
-                  <li className="card">
-                    <img
-                      src={currentExercise.picture}
-                      alt={currentExercise.exercise}
-                    />
-                    <div>
-                      <h3>{currentExercise.exercise}</h3>
-                      <p className="content">{currentExercise.category}</p>
-                      <p className="content">{currentExercise.description}</p>
-                    </div>
+                <div key={currentExercise.id}> {/* Moved key to the parent div */}
+                  <Link
+                    to={`/workouts/${type}/${categoryLowerCase}/${currentExercise.id}`} // Updated the Link URL
+                  >
+                    <li className="card">
+                      <img
+                        src={currentExercise.picture}
+                        alt={currentExercise.exercise}
+                      />
+                      <div>
+                        <h3>{currentExercise.exercise}</h3>
+                        <p className="content">{currentExercise.category}</p>
+                        <p className="content">{currentExercise.description}</p>
+                      </div>
+                    </li>
+                  </Link>
+                  <div>
+                    <DeleteHandler id={currentExercise.id} onDelete={handleDelete} /> {/* Highlighted line */}
                     
-                  </li>
-                </Link>
+                  </div>
+                </div>
               );
             }
 

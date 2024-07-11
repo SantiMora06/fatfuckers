@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import DeleteHandler from './DeleteHandler'; // Import DeleteHandler
 
 const BodyExercises = () => {
   const { category } = useParams();
@@ -32,35 +32,44 @@ const BodyExercises = () => {
 
   const filteredExercises = normalizedCategory
     ? bodyEx.filter(
-      (exercise) =>
-        !exercise.isGym &&
-        exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
-    )
+        (exercise) =>
+          !exercise.isGym &&
+          exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
+      )
     : bodyEx.filter((exercise) => !exercise.isGym);
 
   console.log("Filtered exercises: ", filteredExercises); // Log filtered exercises
+
+  // Added handleDelete function
+  const handleDelete = (id) => {
+    setBodyEx((prevExercises) => prevExercises.filter(exercise => exercise.id !== id));
+  };
 
   return (
     <section>
       <ul>
         {filteredExercises.map((currentExercise) => (
-          <Link
-            to={`/workouts/bodyweight/${currentExercise.category}/${currentExercise.id}`}
-            key={currentExercise.id}
-          >
-            <li className="card">
-              <img
-                src={currentExercise.picture}
-                alt={currentExercise.exercise}
-              />
-              <h3>{currentExercise.exercise}</h3>
-              <p className="content">{currentExercise.category}</p>
-              <p className="content">{currentExercise.description}</p>
-            </li>
-          </Link>
+          <div key={currentExercise.id}>
+            <Link
+              to={`/workouts/bodyweight/${currentExercise.category}/${currentExercise.id}`}
+            >
+              <li className="card">
+                <img
+                  src={currentExercise.picture}
+                  alt={currentExercise.exercise}
+                />
+                <h3>{currentExercise.exercise}</h3>
+                <p className="content">{currentExercise.category}</p>
+                <p className="content">{currentExercise.description}</p>
+              </li>
+            </Link>
+            <DeleteHandler id={currentExercise.id} onDelete={handleDelete} /> {/* Added delete handler */}
+            
+          </div>
         ))}
       </ul>
     </section>
   );
 };
+
 export default BodyExercises;

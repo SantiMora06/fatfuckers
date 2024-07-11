@@ -43,6 +43,7 @@ const ExerciseDetails = () => {
       <Link to={`/workouts/${exercise.id}/edit`}>
         <button>Edit</button>
       </Link>
+      
     </div>
   );
 };
