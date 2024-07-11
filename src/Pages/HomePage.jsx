@@ -9,6 +9,7 @@ import BodyWeightPage from "./BodyWeightPage";
 import IntroCard from "./IntroCards";
 import ExerciseDetails from "./ExerciseDetail";
 import AddExercise from "./AddExercise";
+import EditExercise from "./EditExercise";
 
 
 
@@ -31,6 +32,7 @@ const HomePage = () => {
         <Route path="/workouts" element={<Workouts />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/workouts/addexercise" element={<AddExercise />} />
+        <Route path="/workouts/:id/edit" element={<EditExercise />} />
       </Routes>
     </>
   );

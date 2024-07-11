@@ -25,9 +25,9 @@ const Exercises = () => {
         const exercisesData = await response.json();
         const filteredExercises = category
           ? exercisesData.filter(
-            (exercise) =>
-              exercise.category.toLowerCase() === category.toLowerCase()
-          )
+              (exercise) =>
+                exercise.category.toLowerCase() === category.toLowerCase()
+            )
           : exercisesData;
         setExercise(filteredExercises);
       }
@@ -90,6 +90,7 @@ const Exercises = () => {
                       <p className="content">{currentExercise.category}</p>
                       <p className="content">{currentExercise.description}</p>
                     </div>
+                    
                   </li>
                 </Link>
               );

@@ -38,7 +38,6 @@ const ToggleNavbar = () => {
           </Link>
 
           <Menu.Divider />
-
           <Menu.Label>Lower Body</Menu.Label>
           <Link to="workouts/quads">
             <Menu.Item className="Item">
@@ -68,6 +67,7 @@ const ToggleNavbar = () => {
           </Link>
         </Menu.Dropdown>
       </Menu>
+
     </section>
   );
 }
