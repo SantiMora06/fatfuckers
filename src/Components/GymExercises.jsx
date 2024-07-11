@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import DeleteHandler from './DeleteHandler'; // Import DeleteHandler
 
 const GymExercises = () => {
   const { category } = useParams();
@@ -32,33 +32,42 @@ const GymExercises = () => {
 
   const filteredExercises = normalizedCategory
     ? gymEx.filter(
-      (exercise) =>
-        exercise.isGym &&
-        exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
-    )
+        (exercise) =>
+          exercise.isGym &&
+          exercise.category.toLowerCase() === normalizedCategory // Use normalized category for comparison
+      )
     : gymEx.filter((exercise) => exercise.isGym);
 
   console.log("Filtered exercises: ", filteredExercises); // Log filtered exercises
+
+  // Added handleDelete function
+  const handleDelete = (id) => {
+    setGymEx((prevExercises) => prevExercises.filter(exercise => exercise.id !== id));
+  };
 
   return (
     <section>
       <ul>
         {filteredExercises.map((currentExercise) => (
-          <Link
-            to={`/workouts/gym/${currentExercise.category}/${currentExercise.id}`}
-            key={currentExercise.id}
-          >
-            <li className="card">
-              <img
-                src={currentExercise.picture}
-                alt={currentExercise.exercise}
-              /> <div>
-                <h3>{currentExercise.exercise}</h3>
-                <p className="content">{currentExercise.category}</p>
-                <p className="content">{currentExercise.description}</p>
-              </div>
-            </li>
-          </Link>
+          <div key={currentExercise.id}>
+            <Link
+              to={`/workouts/gym/${currentExercise.category}/${currentExercise.id}`}
+            >
+              <li className="card">
+                <img
+                  src={currentExercise.picture}
+                  alt={currentExercise.exercise}
+                />
+                <div>
+                  <h3>{currentExercise.exercise}</h3>
+                  <p className="content">{currentExercise.category}</p>
+                  <p className="content">{currentExercise.description}</p>
+                </div>
+              </li>
+            </Link>
+            <DeleteHandler id={currentExercise.id} onDelete={handleDelete} /> {/* Added delete handler */}
+            
+          </div>
         ))}
       </ul>
     </section>
