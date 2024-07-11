@@ -2,56 +2,74 @@ import { Menu, Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 const ToggleNavbar = () => {
-    return ( 
-        <section className='Toggle'>
-        <Menu shadow="md" width={1000}>
-      <Menu.Target>
-        <Button>Exercises</Button>
-      </Menu.Target>
+  return (
+    <section className='Toggle'>
+      <Menu shadow="md" width={1000}>
+        <Menu.Target>
+          <Button>Exercises</Button>
+        </Menu.Target>
 
-      <Menu.Dropdown>
-        <Menu.Label>Upper Body</Menu.Label>
-        <Menu.Item className="Item">
-          <Link to="workouts/biceps"> Biceps </Link> 
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/triceps"> Triceps </Link>
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/chest"> Chest </Link>
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/back"> Back </Link>
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/shoulders"> Shoulders </Link>
-        </Menu.Item>
-       
+        <Menu.Dropdown>
+          <Menu.Label>Upper Body</Menu.Label>
+          <Link to="workouts/biceps">
+            <Menu.Item className="Item">
+              Biceps
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/triceps">
+            <Menu.Item className="Item">
+              Triceps
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/chest">
+            <Menu.Item className="Item">
+              Chest
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/back">
+            <Menu.Item className="Item">
+              Back
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/shoulders">
+            <Menu.Item className="Item">
+              Shoulders
+            </Menu.Item>
+          </Link>
 
-        <Menu.Divider />
+          <Menu.Divider />
+          <Menu.Label>Lower Body</Menu.Label>
+          <Link to="workouts/quadriceps">
+            <Menu.Item className="Item">
+              Quads
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/calves">
+            <Menu.Item className="Item">
+              Calves
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/core">
+            <Menu.Item className="Item">
+              Core
+            </Menu.Item>
+          </Link>
+          <Menu.Divider />
+          <Link to="workouts/">
+            <Menu.Item>
+              All Exercises
+            </Menu.Item>
+          </Link>
+          <Link to="workouts/addexercise">
+            <Menu.Item>
+              Add Exercise
+            </Menu.Item>
+          </Link>
+        </Menu.Dropdown>
+      </Menu>
 
-        <Menu.Label>Lower Body</Menu.Label>
-        <Menu.Item className="Item">
-        <Link to="workouts/quads"> Quads </Link>
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/calves"> Calves </Link>
-        </Menu.Item>
-        <Menu.Item className="Item">
-        <Link to="workouts/core"> Core </Link>
-        </Menu.Item>
-        <Menu.Divider />
-
-<Menu.Item>
-<Link to="workouts/"> All Exercises </Link>
-  </Menu.Item>
-  <Menu.Item>
-<Link to="workouts/addexercise"> Add Exercise </Link>
-  </Menu.Item>
-      </Menu.Dropdown>
-    </Menu>
     </section>
-     );
+  );
 }
- 
+
 export default ToggleNavbar;
