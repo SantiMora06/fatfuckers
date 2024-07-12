@@ -8,8 +8,10 @@ const GymPage = () => {
 
   return (
     <>
-      <h1>{category ? `${category} Exercises` : 'All Gym Exercises'}</h1>
-      <GymExercises category={category} />
+      <div className='SpecificGym'>
+        <h1>{category ? `${category} Exercises` : 'All Gym Exercises'}</h1>
+        <GymExercises category={category} />
+      </div>
     </>
   );
 }
