@@ -70,6 +70,7 @@ function Form(props) {
 
                 />
 
+
                 <label>Picture: </label>
                 <input
                     type="url"
