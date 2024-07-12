@@ -1,5 +1,5 @@
-import { Santi } from "../assets/file.jpeg"
-import { Omid } from "../assets/OMID.png"
+import { Santi } from "src/assets/file.jpeg"
+import { Omid } from "src/assets/OMID.png"
 
 
 const About = () => {
