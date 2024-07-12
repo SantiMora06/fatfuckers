@@ -1,5 +1,7 @@
+
 import { Santi } from "../assets/file.jpeg"
 import { Omid } from "../assets/OMID.png"
+
 
 
 const About = () => {
