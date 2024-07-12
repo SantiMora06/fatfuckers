@@ -170,6 +170,16 @@ div.articlesCard {
 }
 
 li.card img {
-    height: 100px;
-    width: 50%;
+    height: 30vh;
+    width: 20vw;
+}
+
+div.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 2em;
 }

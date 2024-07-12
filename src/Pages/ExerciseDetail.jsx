@@ -34,12 +34,11 @@ const ExerciseDetails = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div className="details">
       <h1>{exercise.exercise}</h1>
       <img src={exercise.picture} alt={exercise.exercise} />
       <p>Description: {exercise.description}</p>
       <p>Category: {exercise.category}</p>
-      <p>ID: {id}</p>
       <Link to={`/workouts/${exercise.id}/edit`}>
         <button>Edit</button>
       </Link>

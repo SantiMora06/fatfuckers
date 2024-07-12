@@ -52,7 +52,7 @@ const GymExercises = () => {
               <img
                 src={currentExercise.picture}
                 alt={currentExercise.exercise}
-              /> <div>
+              /> <div className="SpecificCard">
                 <h3>{currentExercise.exercise}</h3>
                 <p className="content">{currentExercise.category}</p>
                 <p className="content">{currentExercise.description}</p>
