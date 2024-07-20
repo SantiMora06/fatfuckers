@@ -59,6 +59,7 @@ function Form(props) {
                     name="exercise"
                     value={exercise}
                     onChange={handleExerciseInput}
+                    required
                 />
 
                 <MultiSelect
@@ -67,7 +68,7 @@ function Form(props) {
                     data={['Biceps', 'Triceps', 'Back', 'Chest', 'Shoulders', 'Quads', 'Calves', 'Core']}
                     onChange={handleCategoryMultiSelect}
                     value={selectedCategories}
-
+                    required
                 />
 
 
@@ -77,6 +78,7 @@ function Form(props) {
                     name="picture"
                     value={picture}
                     onChange={handlePictureInput}
+                    required
                 />
 
                 <label>Description: </label>
@@ -85,6 +87,7 @@ function Form(props) {
                     name="description"
                     value={description}
                     onChange={handleDescriptionInput}
+                    required
                 />
 
                 <label>Gym exercise? </label>
@@ -93,6 +96,7 @@ function Form(props) {
                     name="isGym"
                     checked={isGym}
                     onChange={handleIsGym}
+                    required
                 />
 
                 <button type="submit">Add an exercise</button>
