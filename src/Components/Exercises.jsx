@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import DeleteHandler from './DeleteHandler'; // Highlighted line
 
 const Exercises = () => {
   const { category } = useParams();
@@ -26,9 +25,9 @@ const Exercises = () => {
         const exercisesData = await response.json();
         const filteredExercises = category
           ? exercisesData.filter(
-              (exercise) =>
-                exercise.category.toLowerCase() === category.toLowerCase()
-            )
+            (exercise) =>
+              exercise.category.toLowerCase() === category.toLowerCase()
+          )
           : exercisesData;
         setExercise(filteredExercises);
       }
@@ -98,10 +97,6 @@ const Exercises = () => {
                       </div>
                     </li>
                   </Link>
-                  <div>
-                    <DeleteHandler id={currentExercise.id} onDelete={handleDelete} /> {/* Highlighted line */}
-                    
-                  </div>
                 </div>
               );
             }

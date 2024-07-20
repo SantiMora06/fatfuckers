@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import DeleteHandler from './DeleteHandler'; // Highlighted line
+
 
 function EditForm({ currentExercise }) {
     const [exercise, setExercise] = useState("");
@@ -52,52 +54,57 @@ function EditForm({ currentExercise }) {
     }
 
     return (
-        <div className="EditExercise">
-            <h3>Edit Exercise</h3>
+        <div>
+            <div className="EditExercise">
+                <h3>Edit Exercise</h3>
 
-            <form onSubmit={handleSubmit}>
-                <label>Exercise: </label>
-                <input
-                    type="text"
-                    name="exercise"
-                    value={exercise}
-                    onChange={handleExerciseInput}
-                />
+                <form onSubmit={handleSubmit}>
+                    <label>Exercise: </label>
+                    <input
+                        type="text"
+                        name="exercise"
+                        value={exercise}
+                        onChange={handleExerciseInput}
+                    />
 
-                <label>Category: </label>
-                <input
-                    type="text"
-                    name="category"
-                    value={category}
-                    onChange={handleCategoryInput}
-                />
+                    <label>Category: </label>
+                    <input
+                        type="text"
+                        name="category"
+                        value={category}
+                        onChange={handleCategoryInput}
+                    />
 
-                <label>Picture: </label>
-                <input
-                    type="url"
-                    name="picture"
-                    value={picture}
-                    onChange={handlePictureInput}
-                />
+                    <label>Picture: </label>
+                    <input
+                        type="url"
+                        name="picture"
+                        value={picture}
+                        onChange={handlePictureInput}
+                    />
 
-                <label>Description: </label>
-                <input
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={handleDescriptionInput}
-                />
+                    <label>Description: </label>
+                    <input
+                        type="text"
+                        name="description"
+                        value={description}
+                        onChange={handleDescriptionInput}
+                    />
 
-                <label>Gym exercise? </label>
-                <input
-                    type="checkbox"
-                    name="isGym"
-                    checked={isGym}
-                    onChange={handleIsGym}
-                />
+                    <label>Gym exercise? </label>
+                    <input
+                        type="checkbox"
+                        name="isGym"
+                        checked={isGym}
+                        onChange={handleIsGym}
+                    />
 
-                <button type="submit">Update Exercise</button>
-            </form>
+                    <button type="submit">Update Exercise</button>
+                </form>
+            </div>
+            <div>
+                <DeleteHandler id={currentExercise.id} onDelete={handleDelete} /> {/* Highlighted line */}
+            </div>
         </div>
     );
 }
