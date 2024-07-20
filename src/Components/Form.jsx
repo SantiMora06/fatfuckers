@@ -88,7 +88,7 @@ function Form(props) {
                 />
 
                 <label>Gym exercise? </label>
-                <input
+                <input className="CheckB"
                     type="checkbox"
                     name="isGym"
                     checked={isGym}

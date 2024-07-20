@@ -1,7 +1,14 @@
 const Footer = () => {
     return (
         <>
-            <div></div>
+            <div>
+                <ul>
+                    <li>Santi</li>
+                    <li>Omid</li>
+                    <li>Mail</li>
+                    <li>Made with love by Santi & Omid</li>
+                </ul>
+            </div>
         </>
     );
 }
